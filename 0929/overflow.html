@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 100px;
+            /* 공백제거 처리 */
+            display: block; /* 한줄로 차곡차곡 쌓아줌 */
+            float: left; /* block의 속성을 해제시킴 */
+        }
+        #parent {
+            position: relative; /* child의 부모조건을 적용 */
+            top: 100px;
+            left: 200px;
+            border: 10px inset rgb(218, 182, 252);
+            width: 100px;
+            height: 100px;
+            /* 부모영역안 컨텐츠의 용량이 초과되었을 때 제어 */
+            overflow: hidden; /* auto = 스크롤이 생김 */
+        }
+        .child {
+            position: absolute;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div>(div>img*4)*2 -->
+    <div id="parent">
+        <div id="id_chd1" class="child" style="left: 0px;">
+            <img src="../images/멍.jpg" alt="">
+            <img src="../images/멍1.jfif" alt="">
+            <img src="../images/멍2.jpg" alt="">
+            <img src="../images/멍3.jpg" alt="">
+        </div>
+        <div id="id_chd2" class="child" style="left: 400px;">  
+            <img src="../images/멍4.jfif" alt="">
+            <img src="../images/멍5.jpg" alt="">
+            <img src="../images/멍6.jfif" alt="">
+            <img src="../images/멍8.jpg" alt="">
+        </div>
+    </div>
+<script>
+   /*document.getElementById("id_chd1"); /* getElementById만 s가 없음 
+    document.getElementsByClassName
+    document.getElementsByName
+    document.getElementsByTagName
+    document.querySelector("#id") /*첫번째 요소만 가져옴.... /* 요즘은 이걸 많이 활용 /* id일때는 #, class일때는 ., 요소는 그냥 작성
+    document.querySelector(".calss") 
+    document.querySelector("tag") 
+    document.querySelectorAll() 배열형태의 데이터를 가져옴... */
+
+    var v_chd1 = document.getElementById("id_chd1");
+    var v_chd2 = document.getElementById("id_chd2");
+    alert("인라인스타일정보있음? [" + v_chd1.style.left + "]");
+    // 인라인 스타일로 초기화가 필요하지만 직접 inline style을 정의했음
+
+    var v_mvWidth = 1; /* 이동할 거래 데이터를 세팅 */
+
+function f_move(){
+    //consol.log(parseInt(v_chd1.style.left) - v_mvWidth);
+    v_chd1.style.left = parseInt(v_chd1.style.left) - v_mvWidth + "px";
+    v_chd2.style.left = parseInt(v_chd2.style.left) - v_mvWidth + "px";
+
+    //프레임 반복하기
+    if(parseInt(v_chd1.style.left) == -400){
+        v_chd1.style.left = "400px";
+    }
+    if(parseInt(v_chd2.style.left) == -400) v_chd2.style.left = "400px";
+
+
+    setTimeout(f_move, 10); //재귀호출
+}
+f_move(); //실행하고
+</script>
+</body>
+</html>

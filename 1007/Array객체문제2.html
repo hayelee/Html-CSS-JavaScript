@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="정수 입력하기" onclick="f_number()">
+    <div></div>
+</body>
+<script>
+
+    function f_number(){
+    
+        var numbers = [];
+        while(1){
+
+            var num = prompt("숫자를 입력:");
+            
+            // 중복제거
+            if(numbers.indexOf(num) != -1){ // -1은 없는 데이터를 의미
+                alert("말복데이터");
+            }else{
+                numbers.push(num);
+            }
+            if(numbers.length >= 5) break;
+            
+        }
+        document.querySelector('div').innerHTML += numbers;
+        console.log(numbers);
+
+    }
+
+</script>
+</html>

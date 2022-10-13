@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="눌렁" onclick="f_write();">
+<script>
+    function f_write(){
+         //이미 만들어진 요소를 제거하고 이걸로 덮어씀(주의해야함/거의 테스트할때만 사용됨)
+        document.write("<div style='border:1px dashed red;'>DIV</div>")
+        document.write("<div style=\"border:1px dashed red;\">DIV</div>")
+        document.write(`<img scr='../image/멍5.jpg>`)
+    }
+</script>
+</body>
+</html>

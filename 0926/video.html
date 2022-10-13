@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        video {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted> <!-- autoplay muted 는 자동재생 controls는 재생바 생성 -->
+        <source src="../videos/지구오락실.mp4"> <!-- 제목에 특수문자 되도록 사용 하지 말아라 -->
+        <source src="../videos/지구오락실.mkv">
+        <source src="../videos/지구오락실.avi">
+        <track src="sample-ko.vtt" 
+            kind ="subtitles" 
+            srclang="ko"
+            label="한국어" default></track>
+    </video> 
+</body>
+</html>

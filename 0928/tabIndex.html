@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    #id_disp{
+        width: 200px;
+        height: 100px;
+        border: 10px dashed red;
+     }
+    </style>
+</head>
+<body>
+    <table border="1"> <!-- table>tr*3>td*2 -->
+        <tr>
+            <td>이름 <input value="" tabindex="1" placeholder="이름을 입력하세요"></td> <!-- placeholder 예시를 입력 -->
+            <td>별명 <input value="" tabindex="-1"></td> <!-- -를 사용하면 포커스가 그곳을 지나가지 않음 -->
+        </tr>
+        <tr>
+            <td>나이 <input value="" tabindex="2" autofocus></td> <!-- autofocus = 지정한 위치부터 포커스를 맞춰서 시작 -->
+            <td>주소 <input value="" tabindex="5"></td>
+        </tr>
+        <tr>
+            <td>전화 <input value="" tabindex="3"></td>
+            <td>모바일 <input value="" tabindex="6"></td>
+        </tr>
+        <tr>
+            <td colspan="2">메모
+                <textarea cols="50" rows="5"></textarea> <!-- cols = 칸, row = 줄 -->
+            </td>
+        </tr>
+    </table>
+    <!-- tab에 적용대상이 아닌 공간에 focus를 주고 싶을 때 tabindex사용 -->
+    <!-- textbox처럼 내용을 입력할 수 있도록 하는 contenteditable -->
+    <div id="id_disp" tabindex="0" contenteditable onkeydown="f_keydown();"></div> <!-- onkeydown = 키가 눌리는 순간 f_keydown() 메소드 실행 -->
+<script>
+    function f_keydown(){
+        alert(event.keyCode + "|" + event.key);
+    }
+</script>
+</body>
+</html>

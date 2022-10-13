@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            height: 140px;
+        }
+
+        #wrapper {
+            border: 2px solid red;
+            width: 220px;
+            height: 500px;
+            position: relative;
+        }
+
+        .btn {
+            position: absolute;
+            top: 2px;
+            left: 110px;
+        }
+
+        .panel {
+            position: absolute;
+            top: 30px;
+        }
+    </style>
+    <script>
+        var v_panel;
+        var v_text;
+        window.onload = function() {
+            v_panel = document.querySelectorAll(".panel"); /* 신방식 */
+            // var v_panel2 = document.getElementsByClassName("panel"); /* 구닥다리 */
+            // console.log(v_panel1.length + " | " + v_panel2.length);
+            v_text = document.querySelector("#id_text");
+            v_text.value = 1 + "/" + v_panel.length;
+        }
+        var v_layerIndex = 0;
+        // 다음버튼
+        function f_next() {
+            // 판넬 z-index 초기화 필요...
+            for(var i = 0; i < v_panel.length; i++){
+                v_panel[i].style.zIndex = 1;
+            }
+            v_layerIndex++; //1 = 2번째 레이어(wok파일)가 보이도록...
+            
+            // 마지막 레이어에 도달했을때 처음 레이어로 다시 되돌리기...
+            if(v_layerIndex == v_panel.length){
+                v_layerIndex = 0;
+            }
+            v_panel[v_layerIndex].style.zIndex = 999;
+            v_text.value = (v_layerIndex + 1) + "/" + v_panel.length;
+
+        }
+        // 이전버튼
+        function f_prev() {
+            for(var i = 0; i < v_panel.length; i++){
+                v_panel[i].style.zIndex = 1;
+            }
+            v_layerIndex--;
+            
+            // 마지막 레이어에 도달했을때 처음 레이어로 다시 되돌리기...
+            if(v_layerIndex == -1){
+                v_layerIndex = v_panel.length -1;
+            }
+            v_panel[v_layerIndex].style.zIndex = 999;
+            v_text.value = (v_layerIndex + 1) + "/" + v_panel.length;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="btn">
+            <input type="button" value="&lt;" onclick="f_prev();">
+            <input id="id_text" value="" size="1">
+            <input type="button" value="&gt;" onclick="f_next();">
+        </div>
+        <div class="panel" style="z-index: 999;">
+            <!-- table>tr*3>td*2 -->
+            <table border="1" >
+                <tr>
+                    <td><img src="../images/멍5.jpg" alt=""></td>
+                    <td><img src="../images/멍.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍2.jpg" alt=""></td>
+                    <td><img src="../images/멍3.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍6.jfif" alt=""></td>
+                    <td><img src="../images/멍8.jpg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel" style="z-index: 888;">
+            <!-- table>tr*3>td*2 -->
+            <table border="1">
+                <tr>
+                    <td><img src="../images/멍2.jpg" alt=""></td>
+                    <td><img src="../images/멍6.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍.jpg" alt=""></td>
+                    <td><img src="../images/멍5.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍3.jpg" alt=""></td>
+                    <td><img src="../images/멍8.jpg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+        <div class="panel">
+            <!-- table>tr*3>td*2 -->
+            <table border="1">
+                <tr>
+                    <td><img src="../images/멍8.jpg" alt=""></td>
+                    <td><img src="../images/멍.jpg" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍2.jpg" alt=""></td>
+                    <td><img src="../images/멍6.jfif" alt=""></td>
+                </tr>
+                <tr>
+                    <td><img src="../images/멍3.jpg" alt=""></td>
+                    <td><img src="../images/멍5.jpg" alt=""></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+    div{
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        box-sizing: border-box;  /* 사이즈가 통일됨 */
+    }
+    #small{
+        border: 4px solid navy;
+        padding: 5px;
+        margin: 50;
+    }
+    #large{
+        border: 14px solid magenta;
+        padding: 15px;
+        margin: auto; /*  margin: auto; = 가운데정렬 */
+    }
+    hr{
+        /* display: none; = 쓰면 안됨 아예 요소를 없어지게 만들어*/
+        visibility: hidden; /* 모습을 눈에 없어보이게만 만들어 */
+    }
+</style>
+</head>
+<body>
+    <!-- 
+    margin: 음수값 허용/ auto지정시 가운데 정렬 / margin collapse
+    padding: box-sizing - border-box를 이용해
+             콘텐츠사이즈에 안쪽여백과 border사이즈를 포함시킨다.
+    *auto지정 : 브라우저에 의해 계산되어 콘텐츠 너비를 제외한
+                나머지 여백을 균등하게 분할하여 가운데 정렬 효과를 얻음        
+    -->
+   <div id="small"> </div>
+   <hr>
+   <div id="large"></div>
+</body>
+</html>

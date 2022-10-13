@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<script>
+    console.log(new Date()); // 한국표준시
+    
+    console.log(new Date().toLocaleString()); // 가독성 있게 날짜데이터 표시 
+    console.log(new Date().toLocaleDateString()); // 가독성 있게 데이터 표시 
+    console.log(new Date().toLocaleTimeString()); // 가독성 있게 데이터 표시 
+    
+    console.log(new Date(1000)); //1970년 1월 1일 우리가 추가한 시간
+    console.log(new Date("2022.10.07")); 
+    // month는 0부터 시작하기때문에 -1을 해서 원하는 값을 출력 
+    console.log(new Date(2022,10-1,07)); 
+
+    var today = new Date();
+    var test = today.getTime();
+    console.log("1970~현재까지 ms: ", test); // 1665130552772
+    console.log(test/1000/60/60/24/365);
+</script>

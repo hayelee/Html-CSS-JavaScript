@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>과제</h1>
+    <h3>1. 1부터 10까지의 합을 구하는 프로그램을 작성하시오.</h3>
+    <script>
+        var sum = 0;
+        for (var i = 0; i <= 10; i++) {
+            sum += i;
+        }
+        document.write(sum);
+
+    </script>
+</body>
+
+<body>
+    <h3>2. 1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오.(continue를 이용)</h3>
+    <script>
+        var sum = 0;
+        for (var i = 0; i <= 200; i++) {
+            if (i % 2 != 0) {
+                continue;
+            }
+            sum += i;
+        }
+        document.write(sum);
+    </script>
+</body>
+
+<body>
+    <h3>3. 사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면
+        그때까지 누적된 값을 출력하는 프로그램을 작성하시오.</h3>
+    <input type="button" value="입력" onclick="id_disp();">
+    <script>
+        function id_disp() {
+            var result = 0;
+            while (true) {
+                var a = parseInt(prompt("정수 입력"));
+                result += a;
+                if (a == 0) {
+                    break;
+                }
+            }
+            document.write(result);
+        }
+    </script>
+</body>
+
+<body>
+    <h3>4. 다중 for문을 이용해서 1~10까지 중 i와 k의 더한 합이
+        3의 배수일 때만 출력(continue를 이용)</h3>
+    <script>
+    
+        for (var i = 1; i <= 10; i++) {
+            for (var k = 1; k <= 10; k++) {
+                if ((i+k) % 3 == 0) {
+                    var sum = i+k+"<br>";
+                    document.write(sum);
+                }else{
+                    continue;
+                }
+            }
+        }
+    </script>
+</body>
+
+<body>
+    <h3>5. 1~100까지 중 2의 배수이면서 3의 배수인 것만 출력</h3>
+    <script>
+        for (var x in window) {
+            console.log(window[x]);
+        }
+        var msg = 0;
+        for (var i = 1; i <= 100; i++) {
+            if ((i % 2 != 0) || (i % 3 != 0)) {
+                continue;
+            }
+            msg += i + "<br>";
+        }
+        document.write(msg);
+    </script>
+</body>
+
+<body>
+    <h3>6. 두 수를 입력(prompt)두 수의 합이 100이상일때만 출력
+        (continue를 이용, 두 수 모두 0이 입력되면 종료)</h3>
+    <input type="button" value="계산" onclick="calc();"><br>
+    <script>
+        function calc() {
+            var result = 0;
+            while (true) {
+                var a = parseInt(prompt("첫번째 숫자 입력"));
+                var b = parseInt(prompt("두번째 숫자 입력"));
+                var result = a + b;
+                if (result >= 100) {
+                    document.write(result);
+                }else if (a == 0 && b == 0){
+                    break;
+                }else{
+                    continue;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

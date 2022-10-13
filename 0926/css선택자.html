@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #tkv{
+            font-size: 40px;
+            color: rebeccapurple; /* id선택자가 우선순위 더 높아서 선 작성됐지만 적용되었음 */
+        }
+        /* 요소(태그)선택자 */
+        div {
+            color: rgba(132, 0, 255, 0.425);
+            background-color: rgba(0, 140, 255, 0.178);
+        }
+        #o0 {  /* 속성 시작은 영문 소문자로 함
+                대문자, 숫자, 특수 문자로 시작 불가 */
+            font-size:  20px;
+            color: rgba(3, 7, 245, 0.932);
+        }
+        /* class선택자 */
+        div.mgg { /* and의 형태로 div이면서 class=mgg인 요소만 선택 */
+            color: rgba(255, 0, 0, 0.521);
+            background-color: rgba(24, 44, 223, 0.212);
+        }
+       /* 전체선택자 */
+       *{
+        border: 1px solid pink;
+       }
+       p, .mgg {
+        font-style: italic; /* 기울임꼴 */
+       }
+    </style>
+</head>
+<body>
+    <!-- id는 페이지 내 유일한 값으로 지정하고, class는 중복 가능 -->
+    <div class="mgg">마징가</div>
+    <div id="tkv">태권V</div>
+    <div>그랜다이저</div>
+    <p>나는 p태그</p> <!-- 앞뒤로 공백 한 줄 씩 생김-->
+    <div id="o0">손오공</div>
+    <div class="mgg">완다</div>
+</body>
+</html>

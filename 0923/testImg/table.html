@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+          /* border-color: gold;
+          border-width: 5px;
+          border-style: dotted; */
+          border: solid 2px rgba(255, 192, 203, 0.856); /*축약, 스타일(dashed, solid, inset 등등)은 필수로 넣어줘야함, 순서는 상관x*/
+          width: 70%;
+          /* border-collapse: collapse; */
+          border-spacing: 10px; /* border-collapse: collapse; 상태일때는 사용 불가 */
+          caption-side: bottom;
+          empty-cells: hide;
+          table-layout: fixed; /* default:auto => 컨텐츠 양에 따라 너비값이 자동 조절 */
+        }
+        td, th {
+            border: 2px rgba(255, 192, 203, 0.856) solid; /*축약*/
+            width: 100px;
+        }
+        #three {
+            width: 300px;
+        }
+        .a {
+            background-color: bisque;
+        }
+        tr:nth-child(even){  /* odd는 홀수, even은 짝수 */
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- vscode 기능) table>tr*4>td*4 -->
+    <table border="1">
+        <caption>테이블 제목</caption>
+        <tr class="a">
+            <th></th>
+            <th>1행 2열</th>
+            <th>1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열1행 3열</th>
+            <th>1행 4열</th>
+        </tr>
+        <tr>
+            <td rowspan="2">2행 1열</td>
+            <td>2행 2열</td>
+            <td>2행 3열</td>
+            <td rowspan="3">2행 4열</td>
+        </tr>
+        <tr class="a">
+           <!--  <td>3행 1열</td> -->
+            <td>3행 2열</td>
+            <td>3행 3열</td>
+            <!-- <td>3행 4열</td> -->
+        </tr>
+        <tr>
+            <td colspan="3">4행 1열</td>
+           <!---- <td>4행 2열</td>
+            <td>4행 3열</td>-->
+           <!--  <td>4행 4열</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>
